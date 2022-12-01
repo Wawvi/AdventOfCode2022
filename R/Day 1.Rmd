@@ -23,7 +23,7 @@ colnames(input) = "calories"
 ```{r}
 input[
   ,
-  `:=`(elf = cumsum(fifelse(is.na(calories), 1, 0)))
+  `:=`(elf = cumsum(is.na(calories)))
 ]
 
 input = input[!is.na(calories)]
